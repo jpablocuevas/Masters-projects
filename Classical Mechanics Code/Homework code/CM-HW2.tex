@@ -1,0 +1,112 @@
+% --------------------------------------------------------------
+% This is all preamble stuff that you don't have to worry about.
+% Head down to where it says "Start here"
+% --------------------------------------------------------------
+ 
+\documentclass[12pt]{article}
+ 
+\usepackage[margin=1.5cm,top=1cm]{geometry} 
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[dvips]{graphicx}
+\usepackage{xcolor}
+\usepackage{times}
+\usepackage{amsmath,amsthm,amssymb}
+\usepackage{dsfont}
+\usepackage{slashed}
+\usepackage{mathtools}
+\usepackage[shortlabels]{enumitem}
+\usepackage{tikz}
+\usetikzlibrary{calc}
+
+
+
+\newenvironment{problem}[2][Problem]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+
+\begin{document}
+ 
+% --------------------------------------------------------------
+%                         Start here
+% --------------------------------------------------------------
+ 
+\title{Homework 2 Classical Mechanics\\Deadline August 30, 2023.}
+\date{}
+ 
+\maketitle
+
+\begin{problem}{1} Suppose that a closed system of $N$ particles described by cartesian position vectors $\mathbf{r}_a$ is invariant under infinitesimal transformations
+\begin{equation}
+\delta\mathbf{r}_a=\epsilon \mathbf{r}_a,
+\end{equation}
+where $\epsilon$ is an ifinitesimal transformation parameter independent of time.
+\begin{enumerate}[(a)]
+\item Find the corresponding transformation for velocities $\delta\mathbf{v}_a$.
+\item Show that, using the equations of motion the transformation of the Lagrangian
+\begin{equation}
+\delta L=\frac{\partial L}{\partial \mathbf{r}_a}\delta\mathbf{r}_a+\frac{\partial L}{\partial \mathbf{v}_a}\delta\mathbf{v}_a,
+\end{equation}
+can be written as a total derivative with respect to time.
+\item Determine the conserved quantity associated to the symmetry $\delta\mathbf{r}_a=\epsilon \mathbf{r}_a$. Is this quantity conserved in the case of a free particle?
+\end{enumerate}
+\end{problem}
+
+
+\begin{problem}{2} Consider a system described by the following Lagrangian
+\begin{equation}
+L=\frac{m}{2}(\dot{x}^2+\dot{y}^2+\dot{z}^2)-\frac{k}{2}(x^2+y^2),
+\end{equation}
+where $m$ and $k$ are positive constants.
+\begin{enumerate}[(a)]
+\item Write down the Euler-Lagrange Equations of Motion.
+\item Show explicitly that the energy of the system $E$ is conserved, \emph{i.e.} $\frac{dE}{dt}=0$.
+\item Calculate $\frac{dp_x}{dt}$, $\frac{dp_y}{dt}$ and $\frac{dp_z}{dt}$ on-shell and determine which components of the momentum are conserved.
+\item Calculate $\frac{dL_x}{dt}$, $\frac{dL_y}{dt}$ and $\frac{dL_z}{dt}$ on-shell and determine which components of the angular momentum are conserved.\end{enumerate}
+\end{problem}
+
+
+\begin{problem}{3}
+\begin{enumerate}[(a)]
+\item Show that the system in Landau's Problem 4, page 12,  is described by the Lagrangian
+\begin{equation}
+L(\theta,\dot{\theta})=m_1 a^2(\dot{\theta}^2+\Omega^2\sin^2\theta)+2m_2 a^2 \dot{\theta}^2 \sin^2\theta+2(m_1+m_2)g a \cos\theta.
+\end{equation}
+\item Write down the corresponding equations of motion.
+\item Find the energy of the system $E(\theta,\dot{\theta})$ and determine if it is conserved.
+\item Show that $E\neq T+U$ and explain why the equality does not hold.
+\item Find the generalized momentum and generalized force.
+\item Discuss under what conditions is the generalized momentum constant in this system.
+\end{enumerate}
+\end{problem}
+\newpage
+
+\begin{problem}{4}
+Two particles of masses $m_1$ and $m_2$ are connected by an inextensible string of length $l$. The first particle is confined to move on the $xy$ plane (the surface of a table), while the second moves only along the $z$ axis (the string passes through a hole at the origin). A constant gravitational acceleration, $g$ acts in the negative $z$ direction.
+\begin{enumerate}[(a)]
+\item Write the Lagrangian $L(r,\phi,\dot{r},\dot{\phi})$, where $r$ and $\phi$ are the cylindrical coordinates of the first particle.
+\item Find the energy of the system $E$ and the angular momentum about the $z$ axis $L_{z}$, and explain why we expect them to be conserved. Are there any other integrals of motion?
+\item Under what condition does $m_1$ undergo circular motion? What is the energy associated with this orbit?
+\item Show that the motion can be expressed as $\frac{1}{2}(m_1+m_2)\dot{r}^2=E-V_{\text{eff}}(r)$ .
+%\item Graph $V_{\text{eff}}(r)$ taking  the values $m_1=1\,\mathrm{kg}$, $m_2=2\,\mathrm{kg}$, $l=10\,\mathrm{m}$ and $g=9.8\,\mathrm{m/s^2}$ for the cases $L_z=1,\,10,\,20,\,30,\,\mathrm{J\,s}$.
+%\item for $E=-50 \,\mathrm{J}$ determine the minimum and maximum values of $r$, taking $m_1=1\,\mathrm{kg}$, $m_2=2\,\mathrm{kg}$, $l=10\,\mathrm{m}$ and $g=9.8\,\mathrm{m/s^2}$ for the cases $L_z=1,\,10,\,20,\,30,\,\mathrm{J\,s}$
+\end{enumerate}
+
+\begin{center}
+\begin{tikzpicture}[scale=1.5]
+\draw [dashed] (0,4) circle (2cm and 0.4cm);
+\draw[->,dashed] (0,0) -- (0,5); 
+\draw[->,dashed] (2,5) -- (-2,3); 
+\draw[-,thick,red] (0,4) -- (0,1); 
+\node at (0,1)[circle,fill,inner sep=3pt,blue] {};
+\node at (0.5,1)[]{$m_2$};
+\draw[-,thick,red] (0,4) -- (1.5,3.75); 
+\node at (1.5,3.75)[circle,fill,inner sep=3pt,blue] {};
+\node at (2,3.5)[]{$m_1$};
+\draw[green,thick] (-0.5,3.75) arc (-100:-75:3.5);
+\node at (0.5,3.4)[]{$\phi$};
+\end{tikzpicture}
+\end{center}
+\end{problem}
+
+ 
+\end{document}

@@ -1,0 +1,86 @@
+% --------------------------------------------------------------
+% This is all preamble stuff that you don't have to worry about.
+% Head down to where it says "Start here"
+% --------------------------------------------------------------
+ 
+\documentclass[12pt]{article}
+ 
+\usepackage[margin=1.5cm,top=1cm]{geometry} 
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[dvips]{graphicx}
+\usepackage{xcolor}
+\usepackage{times}
+\usepackage{amsmath,amsthm,amssymb}
+\usepackage{dsfont}
+\usepackage{slashed}
+\usepackage{mathtools}
+\usepackage[shortlabels]{enumitem}
+\usepackage{tikz}
+\usetikzlibrary{calc}
+
+
+
+\newenvironment{problem}[2][Problem]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+
+\begin{document}
+ 
+% --------------------------------------------------------------
+%                         Start here
+% --------------------------------------------------------------
+ 
+\title{Homework 4 Classical Mechanics\\Deadline October 11, 2023.}
+\date{}
+ 
+\maketitle
+
+
+\begin{problem}{1}
+Find the Hamiltonian and the canonical equations corresponding to each of the following Lagrangians 
+\begin{align}
+\text{(a)}&\quad & L(\phi,\dot{\phi},t)&=\frac{1}{2} m l^2\dot{\phi}^2+mla\gamma^2\sin(\phi-\gamma t)+mgl\cos\phi.
+\\
+\text{(b)}&\quad &L(\theta,\dot{\theta})&=m_1 a^2(\dot{\theta}^2+\Omega^2\sin^2\theta)+2m_2 a^2 \dot{\theta}^2 \sin^2\theta+2(m_1+m_2)g a \cos\theta.
+\\
+\text{(c)}&\quad & L (x,\phi,\dot{x},\dot{\phi}) &= \frac{1}{2} (m_1+m_2) \dot{x}^2+\frac{1}{2}m_2\left(l^2\dot{\phi}^2+2l\dot{x}\dot{\phi}\cos\phi\right)+m_2 g l \cos\phi.
+\end{align}
+\end{problem}
+
+\begin{problem}{2}
+Find the conditions on the parameters $a, b, c, d \in \mathbb{R}$  such that the linear differential equations
+\begin{equation}
+\dot{p}=a p + b q,\qquad \dot{q}=c p+ d q,
+\end{equation}
+are the canonical equations for some Hamiltonian $H$, and compute $H$.
+\end{problem}
+
+\begin{problem}{3}
+In the absence of an electric field, the Lagrangian of an electron of mass $m$ and charge $-e$ is $L = \frac{1}{2}m\dot{\mathbf{x}}^2 - e\dot{\mathbf{x}}\cdot\mathbf{A}$. In the case of motion restricted to a plane we have $ \mathbf{A} = (B/2)(-y,x)$. Write the Hamiltonian in polar coordinates and the canonical equations. Find the radius of the circular orbit.
+\end{problem}
+
+\begin{problem}{4}
+Probe the following identities for the Poisson brackets
+\begin{equation}
+\left\{f,g\right\}=\frac{\partial f}{\partial x_i}\frac{\partial g}{\partial p_i}-\frac{\partial f}{\partial p_i}\frac{\partial g}{\partial x_i},
+\end{equation}
+involving the components of the angular momentum
+\begin{equation}
+L_i=\epsilon_{ijk}x_jp_k.
+\end{equation}
+\begin{align}
+\text{(a)}& &\left\{L_i,x_j\right\}&=\epsilon_{ijk} x_k.&\qquad\\
+\text{(b)}& &\left\{L_i,p_j\right\}&=\epsilon_{ijk} p_k.&\qquad\\
+\text{(c)}& &\left\{L_i,L_j\right\}&=\epsilon_{ijk} L_k.&\qquad\\
+\text{(d)}& &\left\{L_i,x_jx_j\right\}&=0.&\qquad\\
+\text{(e)}&  &\left\{L_i,p_jp_j\right\}&=0.&\qquad\\
+\text{(f)}&  &\left\{L_i,L_jL_j\right\}&=0.&\qquad
+\end{align}
+
+
+\end{problem}
+
+
+
+ 
+\end{document}

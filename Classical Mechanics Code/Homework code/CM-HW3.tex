@@ -1,0 +1,79 @@
+% --------------------------------------------------------------
+% This is all preamble stuff that you don't have to worry about.
+% Head down to where it says "Start here"
+% --------------------------------------------------------------
+ 
+\documentclass[12pt]{article}
+ 
+\usepackage[margin=1.5cm,top=1cm]{geometry} 
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[dvips]{graphicx}
+\usepackage{xcolor}
+\usepackage{times}
+\usepackage{amsmath,amsthm,amssymb}
+\usepackage{dsfont}
+\usepackage{slashed}
+\usepackage{mathtools}
+\usepackage[shortlabels]{enumitem}
+\usepackage{tikz}
+\usetikzlibrary{calc}
+
+
+
+\newenvironment{problem}[2][Problem]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+
+\begin{document}
+ 
+% --------------------------------------------------------------
+%                         Start here
+% --------------------------------------------------------------
+ 
+\title{Homework 3 Classical Mechanics\\Deadline September 18, 2023.}
+\date{}
+ 
+\maketitle
+
+\begin{problem}{1} 
+Show that a one-dimensional particle subject to a potential $U(x) =k x^{2(n+1)}$, where $n$ is an integer (with $n\neq-1$) and $k$ a constant, will oscillate with a period proportional to $A^{-n}$ where $A$ is the amplitude.
+\end{problem}
+
+\begin{problem}{2}
+A particle of mass $m$ moves along the $x$ axis under the influence of
+the potential
+\begin{equation}
+U(x)=U_0 x^2 e^{-a x^2},
+\end{equation}
+where $U_0$ and $a$ are positive constants. 
+\begin{enumerate} [(a)]
+\item Find the equilibrium points of the motion, 
+\item Plot the potential energy.
+\item Draw the phase portrait of the system. Indicate the relation between the energy and the geometry of the phase-space
+orbits, showing the different phases of mechanical motion.
+\end{enumerate}
+\end{problem}
+
+
+\begin{problem}{3}
+A point particle of unit mass is moving along a line under the action of a conservative force field with potential energy
+\begin{equation}
+U(x)=\frac{\kappa}{2} x^2+\frac{\lambda}{4}x^4,
+\end{equation}
+where $\kappa$ and $\lambda$ are two given real parameters.
+\begin{enumerate}[(a)]
+\item Determine  all the positions of stable equilibrium for all the values of the parameters $\kappa$ and $\lambda$.
+\item Consider the motion, with initial conditions $x(0) = 0$, $\dot{x}(0) = 1$. For which values of $\kappa$ and $\lambda$ is the motion periodic? 
+\item For the same initial conditions $x(0) = 0$, $\dot{x}(0) = 1$, determine the range of values of $\kappa$ and $\lambda$ where the particle goes to infinity in finite time.
+\item Determine all the periodic motions and the corresponding time period.
+\item Draw the phase portrait of the system in the following cases: $\kappa>0$ and $\lambda>0$,
+\item $\kappa<0$ and $\lambda<0$,
+\item $\kappa<0$ and $\lambda>0$,
+\item $\kappa>0$ and $\lambda<0$.
+\end{enumerate}
+\end{problem}
+\newpage
+
+
+ 
+\end{document}
