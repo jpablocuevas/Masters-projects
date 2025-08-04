@@ -1,0 +1,65 @@
+#DPD 
+
+dimension      	3
+units          	lj
+#comm_modify		vel yes
+comm_modify    	mode single cutoff 2.0 vel yes
+#newton			off
+
+#atom_style		hybrid atomic charge
+atom_style		atomic
+#atom_style		charge
+
+#neighbor			0.3 bin
+#neigh_modify		delay 0 every 4 check no
+neighbor       	2.5 bin
+neigh_modify   	delay 2
+
+region			domain block -5 5 -5 5 -5 5 units box
+#create_box		2 domain
+create_box		1 domain
+change_box 		all boundary p p p 
+
+#lattice			fcc 4
+create_atoms		1 random 1500 15255 domain
+#create_atoms		1 random 3000 15255 domain
+#create_atoms		2 random 1500 47214 domain
+#create_atoms		3 random 98 30182 domain
+
+#dump				dump1 all atom 2 checkargeclas.lammpstrj
+
+#set				type 2 charge  1.0
+#set				type 3 charge -1.0
+mass				* 1.0
+
+pair_style		dpd 1.0 1.0 419084618
+
+
+#kspace_style 		pppm 5.0
+#pair_style		hybrid/overlay coul/long 2.5 dpd 1.0 1.0 419084618
+
+#kspace_style		ewald 5.0
+#pair_coeff		* * lj/cut/coul/long 0 1
+pair_coeff		1 1 25.0 4.5 1.0
+#pair_coeff		2 1 75.0 4.5 1.0
+#pair_coeff		2 2 25.0 4.5 1.0
+#pair_coeff		* * coul/long
+
+thermo_style		custom step temp pe press
+thermo 200
+
+#variable			f file tmp.times
+#variable			s equal next(f)
+#dump				conf_run all custom 100 ./frames/Conf_Run.* id type x y z vx vy vz
+#dump_modify		conf_run every v_s
+#dump_modify		conf_run sort id 
+
+dump			dump0 all atom 200 test.lammpstrj
+
+velocity			all create 1.0 8178251
+fix				integrator all nvt temp 1.0 1.0 0.1
+
+timestep       	0.1
+run 20000
+#run 10000
+
